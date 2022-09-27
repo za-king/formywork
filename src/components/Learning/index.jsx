@@ -3,18 +3,27 @@ import { SkillsData } from "../Skills/skillsData";
 const Learning = () => {
   return (
     <>
-      <div className="bg-white w-full h-[500px]">
-        <div className="text-center font-poppins text-4xl font-bold text-black">Learning</div>
+      <div className="bg-white dark:bg-slate-800 dark:text-white max-w-full min-h-[700px] max-h-full ">
+        <div className="text-center font-poppins text-4xl font-bold pt-12">Learning</div>
         <div className="container mt-24">
-          <div className="grid grid-cols-4 gap-2 justify-items-center">
-            {SkillsData.map((item,index) => {
-              return <>
-              <div id={index} className=" w-48 h-48 hover:shadow-md  font text-white rounded-tl-2xl rounded-br-2xl justify-self-center  ">
-              
-                <img src={item.image} alt="" width={120}  className="mx-auto"   />
-                <p className="text-black text-center font-poppins text-2xl font-medium my-5">{item.title}</p>
-              </div>
-              </>
+          <div className="grid gap-4 md:grid-cols-4 grid-cols-2 mx-auto  justify-items-center">
+          {SkillsData.map((item, index) => {
+              return (
+                <>
+                  <div
+                    id={index}
+                    className=" w-48 h-48 transition ease-in-out delay-150 bg-white hover:shadow-md  rounded-tl-2xl rounded-br-2xl  flex flex-col  justify-center   "
+                  >
+                    <img
+                      src={item.image}
+                      alt=""
+                      width={120}
+                      className="mx-auto"
+                    />
+                   
+                  </div>
+                </>
+              );
             })}
           </div>
         </div>

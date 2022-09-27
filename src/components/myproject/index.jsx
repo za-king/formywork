@@ -1,4 +1,4 @@
-import React,{useRef} from "react";
+import React, { useRef, useEffect, useState } from "react";
 import Card from "../card";
 import { Swiper, SwiperSlide } from "swiper/react";
 
@@ -7,29 +7,41 @@ import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
 
-import { Pagination, Navigation } from "swiper";
-import { FiChevronLeft,FiChevronRight } from "react-icons/fi";
+import { Autoplay, Pagination, Navigation } from "swiper";
+import { FiChevronLeft, FiChevronRight } from "react-icons/fi";
 
 const MyProject = () => {
+  const [windowWidth, setWindowWidth] = useState();
+  const lebar = window.innerWidth;
+
+  useEffect(() => {
+    window.addEventListener("resize", (e) => {
+      setWindowWidth(window.innerWidth);
+    });
+  }, [lebar]);
 
   const prevRef = useRef(null);
   const nextRef = useRef(null);
 
   return (
     <>
-      <div className="w-full h-screen">
+      <div className="bg-white dark:bg-slate-800 dark:text-white max-w-full h-screen ">
         <div className="text-center font-poppins text-4xl font-bold">
           My Project
         </div>
-        <div className="container mt-24">
+        <div className="max-w-full container mt-24">
           <Swiper
-            slidesPerView={3}
+            slidesPerView={windowWidth <= 768 ? 1 : 3}
             spaceBetween={30}
-            slidesPerGroup={3}
+            slidesPerGroup={windowWidth <= 768 ? 1 : 3}
             loop={true}
             loopFillGroupWithBlank={true}
             pagination={{
               clickable: true,
+            }}
+            autoplay={{
+              delay: 2500,
+              disableOnInteraction: false,
             }}
             onInit={(swiper) => {
               swiper.params.navigation.prevEl = prevRef.current;
@@ -37,22 +49,39 @@ const MyProject = () => {
               swiper.navigation.init();
               swiper.navigation.update();
             }}
-            
-            modules={[Pagination, Navigation]}
-            className="h-96 border-b-4 border-black"
+            modules={[Autoplay, Pagination, Navigation]}
+            className="h-96 border-b-4 "
           >
-            <SwiperSlide><Card/></SwiperSlide>
-            <SwiperSlide><Card/></SwiperSlide>
-            <SwiperSlide><Card/></SwiperSlide>
-            <SwiperSlide><Card/></SwiperSlide>
+            <SwiperSlide>
+              <Card />
+            </SwiperSlide>
+            <SwiperSlide>
+              <Card />
+            </SwiperSlide>
+            <SwiperSlide>
+              <Card />
+            </SwiperSlide>
+            <SwiperSlide>
+              <Card />
+            </SwiperSlide>
           </Swiper>
 
           <div className="flex justify-end mt-5">
             <div class="swiper-button-prev-unique" ref={prevRef}>
-              <FiChevronLeft size={"50px"} />
+              <FiChevronLeft
+                size={"50px"}
+                onMouseOver={({ target }) => (target.style.color = "red")}
+                onMouseOut={({ target }) => (target.style.color = "black")}
+                className="cursor-pointer"
+              />
             </div>
             <div class="swiper-button-next-unique" ref={nextRef}>
-              <FiChevronRight size={"50px"} />
+              <FiChevronRight
+                size={"50px"}
+                onMouseOver={({ target }) => (target.style.color = "red")}
+                onMouseOut={({ target }) => (target.style.color = "black")}
+                className="cursor-pointer"
+              />
             </div>
           </div>
         </div>
