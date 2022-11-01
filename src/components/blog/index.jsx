@@ -7,10 +7,13 @@ const Blog = () => {
         <div className="text-center font-poppins text-4xl font-bold">Blog</div>
         <div className="container mt-24">
           <p className="text-center font-poppins text-2xl font-base">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto iure
-            excepturi delectus nobis provident! Hic reprehenderit quam veniam
-            sunt error unde, consequatur consectetur fugiat minima ea deserunt
-            officia, reiciendis aspernatur?
+            i'm M.Zaky Syukur, 23 years old I'm fresh graduate bachelor of
+            Computer,Majoring in Informatics Engineering at Gunadarma
+            University, I am a person who has analytical and critical thinking
+            skills, likes programming and design. I have the motivation to
+            develop insight adn knowledge,especially in IT. I can work
+            individualy or in at team. I am motivated, able to collaborate,
+            belive in passion, creative and I have the will to learn
           </p>
         </div>
       </div>

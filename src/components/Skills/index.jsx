@@ -7,7 +7,7 @@ const Skills = () => {
         <div className="text-center font-poppins text-4xl font-bold pt-12">
           Skills
         </div>
-        <div className="container pt-12">
+        <div className="container pt-12  m-auto">
           <div className="grid gap-4 md:grid-cols-4 grid-col-2 mx-auto justify-items-center">
             {SkillsData.map((item, index) => {
               return (

@@ -1,29 +1,28 @@
-import React ,{useRef,useState,useEffect}from "react";
+import React, { useRef, useState, useEffect } from "react";
 import Card from "../card";
 import { Swiper, SwiperSlide } from "swiper/react";
-
 // Import Swiper styles
 import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
-
 import { Autoplay, Pagination, Navigation } from "swiper";
 import { FiChevronLeft, FiChevronRight } from "react-icons/fi";
+import { ProjectTeamData } from "../../database";
 
 const ProjectTeam = () => {
+  const [windowWidth, setWindowWidth] = useState();
+  const lebar = window.innerWidth;
 
-  const [windowWidth, setWindowWidth] = useState()
-  const lebar = window.innerWidth
-
-  useEffect(()=>{    
-    window.addEventListener('resize', e => {
+  useEffect(() => {
+    window.addEventListener("resize", (e) => {
       setWindowWidth(window.innerWidth);
     });
-  },[lebar])
+  }, [lebar]);
 
   const prevRef = useRef(null);
   const nextRef = useRef(null);
 
+  console.log(ProjectTeamData);
 
   return (
     <>
@@ -54,30 +53,31 @@ const ProjectTeam = () => {
             modules={[Autoplay, Pagination, Navigation]}
             className="swiper-container h-96 border-b-4  "
           >
-            <SwiperSlide>
-              <Card />
-            </SwiperSlide>
-            <SwiperSlide>
-              <Card />
-            </SwiperSlide>
-            <SwiperSlide>
-              <Card />
-            </SwiperSlide>
-            <SwiperSlide>
-              <Card />
-            </SwiperSlide>
+            {ProjectTeamData.map((item, index) => {
+              return (
+                <SwiperSlide key={index}>
+                  <Card  item={item}/>
+                </SwiperSlide>
+              );
+            })}
           </Swiper>
 
           <div className="flex justify-end mt-5">
             <div class="swiper-button-prev-unique" ref={prevRef}>
-              <FiChevronLeft size={"50px"} onMouseOver={({ target }) => (target.style.color = "red")}
+              <FiChevronLeft
+                size={"50px"}
+                onMouseOver={({ target }) => (target.style.color = "red")}
                 onMouseOut={({ target }) => (target.style.color = "black")}
-                className="cursor-pointer"/>
+                className="cursor-pointer"
+              />
             </div>
             <div class="swiper-button-next-unique" ref={nextRef}>
-              <FiChevronRight size={"50px"} onMouseOver={({ target }) => (target.style.color = "red")}
+              <FiChevronRight
+                size={"50px"}
+                onMouseOver={({ target }) => (target.style.color = "red")}
                 onMouseOut={({ target }) => (target.style.color = "black")}
-                className="cursor-pointer"/>
+                className="cursor-pointer"
+              />
             </div>
           </div>
         </div>

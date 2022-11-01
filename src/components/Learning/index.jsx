@@ -5,8 +5,8 @@ const Learning = () => {
     <>
       <div className="bg-white dark:bg-slate-800 dark:text-white max-w-full min-h-[700px] max-h-full ">
         <div className="text-center font-poppins text-4xl font-bold pt-12">Learning</div>
-        <div className="container mt-24">
-          <div className="grid gap-4 md:grid-cols-4 grid-cols-2 mx-auto  justify-items-center">
+        <div className="container mt-24 m-auto">
+          <div className="grid gap-4 md:grid-cols-4 grid-cols-2  justify-items-center pb-12">
           {SkillsData.map((item, index) => {
               return (
                 <>

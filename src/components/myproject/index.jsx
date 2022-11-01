@@ -1,14 +1,13 @@
 import React, { useRef, useEffect, useState } from "react";
 import Card from "../card";
 import { Swiper, SwiperSlide } from "swiper/react";
-
 // Import Swiper styles
 import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
-
 import { Autoplay, Pagination, Navigation } from "swiper";
 import { FiChevronLeft, FiChevronRight } from "react-icons/fi";
+import { MyProjectData} from "../../database";
 
 const MyProject = () => {
   const [windowWidth, setWindowWidth] = useState();
@@ -40,7 +39,7 @@ const MyProject = () => {
               clickable: true,
             }}
             autoplay={{
-              delay: 2500,
+              delay: 3500,
               disableOnInteraction: false,
             }}
             onInit={(swiper) => {
@@ -52,18 +51,13 @@ const MyProject = () => {
             modules={[Autoplay, Pagination, Navigation]}
             className="h-96 border-b-4 "
           >
-            <SwiperSlide>
-              <Card />
-            </SwiperSlide>
-            <SwiperSlide>
-              <Card />
-            </SwiperSlide>
-            <SwiperSlide>
-              <Card />
-            </SwiperSlide>
-            <SwiperSlide>
-              <Card />
-            </SwiperSlide>
+            {MyProjectData.map((item, index) => {
+              return (
+                <SwiperSlide key={index}>
+                  <Card  item={item}/>
+                </SwiperSlide>
+              );
+            })}
           </Swiper>
 
           <div className="flex justify-end mt-5">
