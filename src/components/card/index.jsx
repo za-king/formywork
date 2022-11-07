@@ -16,7 +16,7 @@ const Card = (props) => {
           </p>
           <div className="pl-2">icon</div>
           <div className="px-2 mt-12">
-          <button className="bg-[#E01111] text-white w-full h-8  rounded-tl-2xl rounded-br-2xl ">Read More</button>
+          <button className="bg-[#E01111] text-white w-full h-8  rounded-tl-2xl rounded-br-2xl hover:bg-[#AA0B0B]">Read More</button>
           </div>
           
         </div>

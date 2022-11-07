@@ -24,27 +24,29 @@ const Footer = () => {
             </form>
           </div>
           <div className="grid grid-cols-3 gap-4">
-            <BsInstagram
+            <a href="https://www.instagram.com/mhdzakysyukr/" target="blank"> <BsInstagram
               style={{ fontSize: "1.5em" }}
               size={30}
               onMouseOver={({ target }) => (target.style.color = "red")}
               onMouseOut={({ target }) => (target.style.color = "black")}
               className="cursor-pointer"
-            />
-            <BsLinkedin
+              
+            /></a>
+            <a href="https://www.linkedin.com/in/m-zaky-syukur-78560a221/" target="blank"><BsLinkedin
               style={{ fontSize: "1.5em" }}
               size={30}
               onMouseOver={({ target }) => (target.style.color = "red")}
               onMouseOut={({ target }) => (target.style.color = "black")}
               className="cursor-pointer"
-            />
-            <BsGithub
+            /></a>
+            <a href="https://github.com/za-king" target="blank"> <BsGithub
               style={{ fontSize: "1.5em" }}
               size={30}
               onMouseOver={({ target }) => (target.style.color = "red")}
               onMouseOut={({ target }) => (target.style.color = "black")}
               className="cursor-pointer"
-            />
+            /></a>
+           
           </div>
         </div>
         <div className="text-center mt-20">

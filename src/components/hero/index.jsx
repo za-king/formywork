@@ -14,12 +14,14 @@ const Hero = () => {
             </div>
 
             <p className="font-monserrat text-2xl font-bold text-[#505050] my-5">
-              Junior Web Developer
+              Web Developer
             </p>
             <div>
-              <button className="bg-[#E01111] w-28 h-10 font-medium text-white rounded-tl-xl rounded-br-xl font-poppins animate-bounce shadow-xl hover:animate-none">
+              <a href="https://mail.google.com/" target="blank"><button className="bg-[#E01111] w-28 h-10 font-medium text-white rounded-tl-xl rounded-br-xl font-poppins animate-bounce shadow-xl hover:animate-none">
                 Hire Me
-              </button>
+              </button></a>
+              
+              
             </div>
           </div>
           <div>

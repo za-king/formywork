@@ -1,4 +1,5 @@
 import React, { useRef, useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 import Card from "../card";
 import { Swiper, SwiperSlide } from "swiper/react";
 // Import Swiper styles
@@ -12,6 +13,7 @@ import { ProjectTeamData } from "../../database";
 const ProjectTeam = () => {
   const [windowWidth, setWindowWidth] = useState();
   const lebar = window.innerWidth;
+  const navigate = useNavigate();
 
   useEffect(() => {
     window.addEventListener("resize", (e) => {
@@ -22,7 +24,9 @@ const ProjectTeam = () => {
   const prevRef = useRef(null);
   const nextRef = useRef(null);
 
-  console.log(ProjectTeamData);
+  const handleClick = (id) => {
+    navigate(`projectdetail/${id}`)
+  };
 
   return (
     <>
@@ -55,8 +59,13 @@ const ProjectTeam = () => {
           >
             {ProjectTeamData.map((item, index) => {
               return (
-                <SwiperSlide key={index}>
-                  <Card  item={item}/>
+                <SwiperSlide
+                  key={index}
+                  onClick={(e) => {
+                    handleClick(item.id);
+                  }}
+                >
+                  <Card item={item} />
                 </SwiperSlide>
               );
             })}

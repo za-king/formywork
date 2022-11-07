@@ -1,4 +1,5 @@
 import React, { useRef, useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 import Card from "../card";
 import { Swiper, SwiperSlide } from "swiper/react";
 // Import Swiper styles
@@ -12,7 +13,7 @@ import { MyProjectData} from "../../database";
 const MyProject = () => {
   const [windowWidth, setWindowWidth] = useState();
   const lebar = window.innerWidth;
-
+  const navigate = useNavigate()
   useEffect(() => {
     window.addEventListener("resize", (e) => {
       setWindowWidth(window.innerWidth);
@@ -22,6 +23,9 @@ const MyProject = () => {
   const prevRef = useRef(null);
   const nextRef = useRef(null);
 
+  const handleClick = (id) => {
+    navigate(`myprojectdetail/${id}`)
+  };
   return (
     <>
       <div className="bg-white dark:bg-slate-800 dark:text-white max-w-full h-screen ">
@@ -53,7 +57,9 @@ const MyProject = () => {
           >
             {MyProjectData.map((item, index) => {
               return (
-                <SwiperSlide key={index}>
+                <SwiperSlide key={index}  onClick={(e) => {
+                  handleClick(item.id);
+                }}>
                   <Card  item={item}/>
                 </SwiperSlide>
               );
