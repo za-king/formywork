@@ -1,30 +1,67 @@
-import React, { useRef, useEffect, useState } from "react";
+import React from "react";
 import { useNavigate } from "react-router-dom";
+import Slider from "react-slick";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 import Card from "../card";
-import { Swiper, SwiperSlide } from "swiper/react";
-// Import Swiper styles
-import "swiper/css";
-import "swiper/css/pagination";
-import "swiper/css/navigation";
-import { Autoplay, Pagination, Navigation } from "swiper";
-import { FiChevronLeft, FiChevronRight } from "react-icons/fi";
-import { MyProjectData} from "../../database";
+
+import { GrNext,GrPrevious } from "react-icons/gr";
+import { MyProjectData } from "../../database";
 
 const MyProject = () => {
-  const [windowWidth, setWindowWidth] = useState();
-  const lebar = window.innerWidth;
-  const navigate = useNavigate()
-  useEffect(() => {
-    window.addEventListener("resize", (e) => {
-      setWindowWidth(window.innerWidth);
-    });
-  }, [lebar]);
-
-  const prevRef = useRef(null);
-  const nextRef = useRef(null);
+  const navigate = useNavigate();
 
   const handleClick = (id) => {
-    navigate(`myprojectdetail/${id}`)
+    navigate(`myprojectdetail/${id}`);
+  };
+  const SampleNextArrow = (props) => {
+    const { className, onClick } = props;
+    return (
+      <GrNext
+        className="bg-white absolute bottom-[50%] right-0  rounded-full cursor-pointer"
+        onClick={onClick}
+        style={{ color: "white", fontSize: "1.5em" }}
+      />
+    );
+  };
+
+  const SamplePrevArrow = (props) => {
+    const { className, onClick } = props;
+    return (
+      <GrPrevious
+        className="bg-white absolute z-10  bottom-[50%]  rounded-full cursor-pointer "
+        onClick={onClick}
+        style={{ color: "white", fontSize: "1.5em" }}
+      />
+    );
+  };
+  const settings = {
+    dots: true,
+    infinite: true,
+    slidesToShow: 3,
+    slidesToScroll: 3,
+    nextArrow: <SampleNextArrow />,
+    prevArrow: <SamplePrevArrow />,
+    autoplay: true,
+    speed: 4000,
+    autoplaySpeed: 4000,
+    responsive: [
+      {
+        breakpoint: 850,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 2
+        }
+      },
+      {
+        breakpoint: 780,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1
+        }
+      }
+    ]
+   
   };
   return (
     <>
@@ -33,57 +70,13 @@ const MyProject = () => {
           My Project
         </div>
         <div className="max-w-full container mt-24">
-          <Swiper
-            slidesPerView={windowWidth <= 768 ? 1 : 3}
-            spaceBetween={30}
-            slidesPerGroup={windowWidth <= 768 ? 1 : 3}
-            loop={true}
-            loopFillGroupWithBlank={true}
-            pagination={{
-              clickable: true,
-            }}
-            autoplay={{
-              delay: 3500,
-              disableOnInteraction: false,
-            }}
-            onInit={(swiper) => {
-              swiper.params.navigation.prevEl = prevRef.current;
-              swiper.params.navigation.nextEl = nextRef.current;
-              swiper.navigation.init();
-              swiper.navigation.update();
-            }}
-            modules={[Autoplay, Pagination, Navigation]}
-            className="h-96 border-b-4 "
-          >
-            {MyProjectData.map((item, index) => {
-              return (
-                <SwiperSlide key={index}  onClick={(e) => {
-                  handleClick(item.id);
-                }}>
-                  <Card  item={item}/>
-                </SwiperSlide>
-              );
-            })}
-          </Swiper>
-
-          <div className="flex justify-end mt-5">
-            <div class="swiper-button-prev-unique" ref={prevRef}>
-              <FiChevronLeft
-                size={"50px"}
-                onMouseOver={({ target }) => (target.style.color = "red")}
-                onMouseOut={({ target }) => (target.style.color = "black")}
-                className="cursor-pointer"
-              />
-            </div>
-            <div class="swiper-button-next-unique" ref={nextRef}>
-              <FiChevronRight
-                size={"50px"}
-                onMouseOver={({ target }) => (target.style.color = "red")}
-                onMouseOut={({ target }) => (target.style.color = "black")}
-                className="cursor-pointer"
-              />
-            </div>
-          </div>
+        <div className="border-b-4 h-96">
+        <Slider {...settings} >{MyProjectData.map((item, index) => {
+            return <Card item={item} />;
+          })}</Slider>
+        </div>
+       
+          
         </div>
       </div>
     </>
