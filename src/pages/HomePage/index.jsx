@@ -14,11 +14,7 @@ function HomePage() {
     <>
     <Navbar/>
     <Hero/>
-    <Blog />
-    <MyProject/>
-    <ProjectTeam/>
-    <Skills/>
-    <Learning/>
+    
     <Footer/>
 
     

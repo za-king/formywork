@@ -37,6 +37,10 @@ const Navbar = () => {
     localStorage.theme = theme === "dark" ? "light" : "dark";
   };
 
+  const handleNavigate = (id) =>{
+    navigate(`/${id}`)
+  }
+
   return (
     <nav className="bg-white dark:bg-slate-800 dark:text-white  max-w-full  h-[80px] left-0 right-0 top-0 border-b  container ">
       <div className="flex justify-between h-full">
@@ -45,8 +49,8 @@ const Navbar = () => {
         </div>
         <ul className="hidden md:flex items-center justify-items-center justify-center text-base font-bold font-poppins ">
           <li className="mx-5 cursor-pointer">Home</li>
-          <li className="mx-5 cursor-pointer">Blog</li>
-          <li className="mx-5 cursor-pointer"> Project</li>
+          <li className="mx-5 cursor-pointer" onClick={() =>{handleNavigate("profile")}}>Profile</li>
+          <li className="mx-5 cursor-pointer"  onClick={() =>{handleNavigate("project")}}> Project</li>
           <li className="mx-5 cursor-pointer"> Skills</li>
         </ul>
 
