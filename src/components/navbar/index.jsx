@@ -51,7 +51,7 @@ const Navbar = () => {
           <li className="mx-5 cursor-pointer">Home</li>
           <li className="mx-5 cursor-pointer" onClick={() =>{handleNavigate("profile")}}>Profile</li>
           <li className="mx-5 cursor-pointer"  onClick={() =>{handleNavigate("project")}}> Project</li>
-          <li className="mx-5 cursor-pointer"> Skills</li>
+          <li className="mx-5 cursor-pointer" onClick={() =>{handleNavigate("skills")}}> Skills</li>
         </ul>
 
         <div className="hidden md:flex items-center justify-items-center justify-center  ">

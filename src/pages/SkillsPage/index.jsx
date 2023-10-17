@@ -1,8 +1,8 @@
 import React from 'react'
-
+import Layout from '../../components/Layout'
 function SkillsPage() {
   return (
-    <div>SkillsPage</div>
+    <Layout><div className='h-screen'>SkillsPage</div></Layout>
   )
 }
 
