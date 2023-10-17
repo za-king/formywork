@@ -1,5 +1,6 @@
 import React from "react";
 import main from "../../images/main-image.png";
+import Typewriter from "typewriter-effect";
 const Hero = () => {
   return (
     <>
@@ -13,15 +14,30 @@ const Hero = () => {
               </p>
             </div>
 
-            <p className="font-monserrat text-2xl font-bold text-[#505050] my-5">
+            {/* <p className="font-monserrat text-2xl font-bold text-[#505050] my-5">
               Web Developer
-            </p>
+            </p> */}
+
+            <div className="font-monserrat text-2xl font-bold text-[#505050] my-5">
+              
+              <Typewriter
+                options={{
+                  strings: [
+                    "Web Developer",
+                    "Front-end Developer",
+                    "Back-end Developer",
+                  ],
+                  autoStart: true,
+                  loop: true,
+                }}
+              />
+            </div>
             <div>
-              <a href="https://mail.google.com/" target="blank"><button className="bg-[#E01111] w-28 h-10 font-medium text-white rounded-tl-xl rounded-br-xl font-poppins animate-bounce shadow-xl hover:animate-none">
-                Hire Me
-              </button></a>
-              
-              
+              <a href="https://mail.google.com/" target="blank">
+                <button className="bg-[#E01111] w-28 h-10 font-medium text-white rounded-tl-xl rounded-br-xl font-poppins animate-bounce shadow-xl hover:animate-none">
+                  Hire Me
+                </button>
+              </a>
             </div>
           </div>
           <div>
