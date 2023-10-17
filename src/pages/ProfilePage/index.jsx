@@ -1,9 +1,12 @@
-import React from 'react'
-import Layout from '../../components/Layout'
+import React from "react";
+import Layout from "../../components/Layout";
+import ProfileComponent from "../../components/profile";
 function ProfilePage() {
   return (
-    <Layout><div className='h-screen'>ProfilePage</div></Layout>
-  )
+    <Layout>
+      <ProfileComponent></ProfileComponent>
+    </Layout>
+  );
 }
 
-export default ProfilePage
+export default ProfilePage;

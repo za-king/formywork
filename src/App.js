@@ -1,5 +1,5 @@
 import "./App.css";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route ,useLocation} from "react-router-dom";
 import HomePage from "./pages/HomePage";
 import ProjectDetail from "./pages/ProjectDetail";
 import MyProjectDetail from "./pages/MyProjectDetail";
@@ -8,6 +8,8 @@ import ProfilePage from "./pages/ProfilePage";
 import SkillsPage from "./pages/SkillsPage";
 
 function App() {
+
+  
   return (
     <>
       <BrowserRouter>
