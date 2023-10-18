@@ -3,7 +3,7 @@ import { SkillsData } from "./skillsData";
 const Skills = () => {
   return (
     <>
-      <div className="bg-white dark:bg-slate-800 dark:text-white max-w-full min-h-[700px] max-h-full ">
+      <div className="bg-white dark:bg-slate-800 dark:text-white max-w-full min-h-[700px] max-h-full py-12 ">
         <div className="text-center font-poppins text-4xl font-bold pt-12">
           Skills
         </div>

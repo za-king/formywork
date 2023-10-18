@@ -1,12 +1,18 @@
-import Layout from "../../components/Layout"
-import ProjectTeam from "../../components/projectteam"
+import Layout from "../../components/Layout";
+import MyProject from "../../components/myproject";
+import ProjectTeam from "../../components/projectteam";
 
 const ProjectPage = () => {
   return (
+    <Layout>
+      
+        <ProjectTeam />
 
-    <Layout><div className="h-screen"><ProjectTeam /></div></Layout>
-    
-  )
-}
+        <MyProject/>
 
-export default ProjectPage
+      
+    </Layout>
+  );
+};
+
+export default ProjectPage;
