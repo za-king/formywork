@@ -6,6 +6,7 @@ import MyProjectDetail from "./pages/MyProjectDetail";
 import ProjectPage from "./pages/ProjectsPage";
 import ProfilePage from "./pages/ProfilePage";
 import SkillsPage from "./pages/SkillsPage";
+import DashboardPage from "./pages/DashboardPage";
 
 function App() {
 
@@ -20,6 +21,7 @@ function App() {
           <Route path="project" element={<ProjectPage/>} />
           <Route path="profile" element={<ProfilePage/>} />
           <Route path="skills" element={<SkillsPage />} />
+          <Route path="dashboard" element={<DashboardPage />} />
         </Routes>
       </BrowserRouter>
     </>

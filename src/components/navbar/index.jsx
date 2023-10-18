@@ -48,10 +48,11 @@ const Navbar = () => {
           <p className="text-2xl font-bold font-poppins hover:text-[#E01111]">zaKing</p>
         </div>
         <ul className="hidden md:flex items-center justify-items-center justify-center text-base font-bold font-poppins ">
-          <li className="mx-5 cursor-pointer" onClick={() =>{handleNavigate("")}}>Home</li>
-          <li className="mx-5 cursor-pointer" onClick={() =>{handleNavigate("profile")}}>Profile</li>
-          <li className="mx-5 cursor-pointer"  onClick={() =>{handleNavigate("project")}}> Project</li>
-          <li className="mx-5 cursor-pointer" onClick={() =>{handleNavigate("skills")}}> Skills</li>
+          <li className="mx-5 cursor-pointer hover:text-[#E01111]" onClick={() =>{handleNavigate("")}}>Home</li>
+          <li className="mx-5 cursor-pointer hover:text-[#E01111]" onClick={() =>{handleNavigate("profile")}}>Profile</li>
+          <li className="mx-5 cursor-pointer hover:text-[#E01111]"  onClick={() =>{handleNavigate("project")}}> Project</li>
+          <li className="mx-5 cursor-pointer hover:text-[#E01111]" onClick={() =>{handleNavigate("skills")}}> Skills</li>
+          <li className="mx-5 cursor-pointer hover:text-[#E01111]" onClick={() =>{handleNavigate("dashboard")}}> Dashboard</li>
         </ul>
 
         <div className="hidden md:flex items-center justify-items-center justify-center  ">
