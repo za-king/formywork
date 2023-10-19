@@ -6,7 +6,7 @@ const ProfileComponent = () => {
     <div className="bg-white dark:bg-slate-800 dark:text-white w-full h-screen">
       <div className="container">
         <div className="text-center py-12">
-          <div className="text-2xl font-bold">Profile</div>
+          <div className="text-4xl font-bold">Profile</div>
           <div className=""><p>I AM Web Developer</p> </div>
         </div>
         <div className="grid md:grid-cols-3 grid-cols-1  justify-items-center">

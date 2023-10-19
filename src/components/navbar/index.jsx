@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { BsList, BsXLg, BsSun, BsMoonFill } from "react-icons/bs";
+import { DarkModeSwitch } from 'react-toggle-dark-mode';
 import { useNavigate } from "react-router-dom";
 const Navbar = () => {
   const [click, setClick] = useState(true);
@@ -82,7 +83,7 @@ const Navbar = () => {
             </button>
           </a>
         </div>
-
+        
         <div className="md:hidden my-auto flex">
           <div>
             {theme === "dark" ? (
