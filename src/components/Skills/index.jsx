@@ -14,7 +14,7 @@ const Skills = () => {
                 <>
                   <div
                     id={index}
-                    className=" w-48 h-48 transition ease-in-out delay-150 bg-white hover:shadow-md  rounded-tl-2xl rounded-br-2xl  flex flex-col  justify-center   "
+                    className=" w-48 h-48 transition ease-in-out delay-150 bg-white shadow-md  rounded-tl-2xl rounded-br-2xl  flex flex-col  justify-center   "
                   >
                     <img
                       src={item.image}

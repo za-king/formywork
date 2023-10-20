@@ -1,17 +1,14 @@
-import React,{useEffect , useState} from "react";
+import React, { useEffect, useState } from "react";
 import GitHubCalendar from "react-github-calendar";
 import Layout from "../../components/Layout";
 function DashboardPage() {
-
   const [theme, setTheme] = useState(null);
 
-
-
   useEffect(() => {
-    setTheme(localStorage.theme)
-  },[]);
+    setTheme(localStorage.theme);
+  }, []);
 
-  console.log(theme)
+  console.log(theme);
   return (
     <Layout>
       <div className="h-screen bg-white dark:bg-slate-800 dark:text-white">

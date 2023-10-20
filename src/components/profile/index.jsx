@@ -7,12 +7,12 @@ const ProfileComponent = () => {
       <div className="container">
         <div className="text-center py-12">
           <div className="text-4xl font-bold">Profile</div>
-          <div className=""><p>I AM Web Developer</p> </div>
+          <div className=""><p>I Am Web Developer</p> </div>
         </div>
         <div className="grid md:grid-cols-3 grid-cols-1  justify-items-center">
           <div className="text-justify">
             <div className="text-center text-lg font-bold">About Me</div>
-            <div className="text-lg pt-4">
+            <div className="text-lg pt-4 font-semibold">
             i'm M.Zaky Syukur, 23 years old I'm fresh graduate bachelor of
             Computer, Majoring in Informatics Engineering at Gunadarma
             University, I am a person who has analytical and critical thinking
@@ -27,7 +27,7 @@ const ProfileComponent = () => {
           </div>
           <div>
             <div className="text-lg font-bold">Details</div>
-            <div className="pt-4 text-lg grid gap-4">
+            <div className="pt-4 text-lg grid gap-4 font-semibold">
               <div className="">
                 <div>Name : </div>
                 <div>M. Zaky Syukur</div>

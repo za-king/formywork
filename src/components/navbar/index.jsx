@@ -1,9 +1,9 @@
 import { useState, useEffect } from "react";
 import { BsList, BsXLg, BsSun, BsMoonFill } from "react-icons/bs";
-import { DarkModeSwitch } from 'react-toggle-dark-mode';
+import Sidebar from "../sidebar/index";
 import { useNavigate } from "react-router-dom";
 const Navbar = () => {
-  const [click, setClick] = useState(true);
+  const [click, setClick] = useState(false);
   const [theme, setTheme] = useState(null);
   const navigate = useNavigate();
 
@@ -41,7 +41,7 @@ const Navbar = () => {
   const handleNavigate = (id) =>{
     navigate(`/${id}`)
   }
-
+  console.log(click)
   return (
     <nav className="bg-white dark:bg-slate-800 dark:text-white  max-w-full  h-[80px] left-0 right-0 top-0 border-b  container ">
       <div className="flex justify-between h-full">
@@ -118,18 +118,38 @@ const Navbar = () => {
                 className="cursor-pointer"
               />
             ) : (
+              <div className={`fixed ${!click ? "-translate-x-[100%] ease-in-out duration-500" :"-translate-x-[0%] ease-in-out duration-500"} top-0 bottom-0 h-screen w-[50%] bg-white dark:bg-slate-800 dark:text-white z-40 `}>
+        <div className="mx-10 my-7 font-bold text-2xl">
+          <div className="flex justify-between ">
+            <div>Menu</div>
+            <div>
               <BsXLg
                 style={{ color: "black", fontSize: "1.5em" }}
                 size={25}
                 onMouseOver={({ target }) => (target.style.color = "red")}
                 onMouseOut={({ target }) => (target.style.color = "black")}
-                onClick={(e) => {
-                  handleClick();
-                }}
+                onClick={() =>{handleClick()}}
                 className="cursor-pointer"
               />
+            </div>
+          </div>
+          <div className="mt-4 text-xl">
+            <ul className="grid gap-2">
+            
+              <li className="hover:bg-gray-100 dark:hover:bg-gray-700 hover:rounded-lg h-12 grid items-center pl-2"><a href="/">HOME</a></li>
+              <li  className="hover:bg-gray-100 dark:hover:bg-gray-700 hover:rounded-lg h-12 grid items-center pl-2"><a href="profile">PROFILE</a></li>
+              <li  className="hover:bg-gray-100 dark:hover:bg-gray-700 hover:rounded-lg h-12 grid items-center pl-2"><a href="project">PROJECT</a></li>
+              <li  className="hover:bg-gray-100 dark:hover:bg-gray-700 hover:rounded-lg h-12 grid items-center pl-2"><a href="skills">SKILLS</a></li>
+              <li  className="hover:bg-gray-100 dark:hover:bg-gray-700 hover:rounded-lg h-12 grid items-center pl-2"><a href="dashboard">DASHBOARD</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+              // <div><Sidebar click={click} handleClick={handleClick}/></div>
             )}
           </div>
+          
         </div>
       </div>
     </nav>
