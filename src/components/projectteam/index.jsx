@@ -1,21 +1,20 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
-import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Card from "../card";
-
-import { GrNext, GrPrevious } from "react-icons/gr";
+import { useGetProject } from "../../hooks/useGetProject";
 import { ProjectTeamData } from "../../database";
 
 const ProjectTeam = () => {
   const navigate = useNavigate();
+  const { projectTeamList } = useGetProject();
 
   const handleClick = (id) => {
     navigate(`projectdetail/${id}`);
   };
 
- 
+  console.log(projectTeamList);
 
   return (
     <>
@@ -25,12 +24,10 @@ const ProjectTeam = () => {
         </div>
         <div className="max-w-full container mt-12">
           <div className="grid grid-cols-3">
-              {ProjectTeamData.map((item, index) => {
-                return <Card item={item} />;
-              })}</div>
-           
-           
-          
+            {projectTeamList?.map((item, index) => {
+              return <Card item={item} />;
+            })}
+          </div>
         </div>
       </div>
     </>

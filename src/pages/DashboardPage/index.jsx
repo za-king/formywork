@@ -8,7 +8,6 @@ function DashboardPage() {
     setTheme(localStorage.theme);
   }, []);
 
-  console.log(theme);
   return (
     <Layout>
       <div className="h-screen bg-white dark:bg-slate-800 dark:text-white">
